@@ -1,4 +1,4 @@
-package com.frizio.web.demo.ecommerce.demochadecommerce;
+package com.frizio.web.demo.ecommerce;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
