@@ -1,4 +1,4 @@
-package com.frizio.web.demo.ecommerce.demochadecommerce;
+package com.frizio.web.demo.ecommerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
