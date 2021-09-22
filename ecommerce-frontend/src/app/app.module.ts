@@ -11,7 +11,7 @@ import { ProductCategoryMenuComponent } from './components/product-category-menu
 
 // The routes start from most specific to generic!
 const routes: Routes = [
-  {path: 'category/:id', component: ProductListComponent},
+  {path: 'category/:id/:name', component: ProductListComponent},
   {path: 'category', component: ProductListComponent},
   {path: 'products', component: ProductListComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'},
