@@ -1,3 +1,5 @@
+import { CartService } from './../../services/cart.service';
+import { CartItem } from './../../common/cart-item';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/common/product';
@@ -24,8 +26,11 @@ export class ProductListComponent implements OnInit {
   previousKeyword: string = null;
 
 
-  constructor(private productService: ProductService,
-              private route: ActivatedRoute) { }
+  constructor(
+    private productService: ProductService,
+    private cartService: CartService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(() => {
@@ -100,8 +105,8 @@ export class ProductListComponent implements OnInit {
   addToCart(theProduct: Product) {
     console.log(`Adding to cart: ${theProduct.name}, ${theProduct.unitPrice}`);
     // TODO ... do the real work
-    //const theCartItem = new CartItem(theProduct);
-    //this.cartService.addToCart(theCartItem);
+    const theCartItem = new CartItem(theProduct);
+    this.cartService.addToCart(theCartItem);
   }
 
 }
