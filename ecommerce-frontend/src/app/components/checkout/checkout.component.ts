@@ -1,3 +1,4 @@
+import { CartService } from './../../services/cart.service';
 import { TheCustomValidators } from './../../validators/the-custom-validators';
 import { State } from './../../common/state';
 import { Country } from './../../common/country';
@@ -26,10 +27,14 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private theFormService: TheFormService
+    private theFormService: TheFormService,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {
+
+    this.reviewCartDetails();
+    
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
         firstName:  new FormControl( '', [ Validators.required, Validators.minLength(2), TheCustomValidators.notOnlyWhitespace ] ),
@@ -172,6 +177,17 @@ export class CheckoutComponent implements OnInit {
         // select first item by default
         formGroup.get('state').setValue(data[0]);
       }
+    );
+  }
+
+  reviewCartDetails() {
+    // subscribe to cartService.totalQuantity
+    this.cartService.totalQuantity.subscribe(
+      totalQuantity => this.totalQuantity = totalQuantity
+    );
+    // subscribe to cartService.totalPrice
+    this.cartService.totalPrice.subscribe(
+      totalPrice => this.totalPrice = totalPrice
     );
   }
 
