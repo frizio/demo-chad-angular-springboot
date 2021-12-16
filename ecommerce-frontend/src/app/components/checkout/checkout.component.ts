@@ -1,3 +1,6 @@
+import { Purchase } from './../../common/purchase';
+import { OrderItem } from './../../common/order-item';
+import { Order } from './../../common/order';
 import { Router } from '@angular/router';
 import { CheckoutService } from './../../services/checkout.service';
 import { CartService } from './../../services/cart.service';
@@ -237,7 +240,17 @@ export class CheckoutComponent implements OnInit {
         }
       }
     );
+  }
 
+  resetCart() {
+    // reset cart data
+    this.cartService.cartItems = [];
+    this.cartService.totalPrice.next(0);
+    this.cartService.totalQuantity.next(0);
+    // reset the form
+    this.checkoutFormGroup.reset();
+    // navigate back to the products page
+    this.router.navigateByUrl("/products");
   }
 
 }
