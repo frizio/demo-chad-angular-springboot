@@ -14,6 +14,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 // The routes start from most specific to generic!
@@ -40,7 +41,8 @@ const routes: Routes = [
     ProductDetailsComponent,
     CartStatusComponent,
     CartDetailsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
