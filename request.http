@@ -1,0 +1,15 @@
+### products
+GET http://localhost:8080/api/products
+
+### products paginate
+GET http://localhost:8080/api/products?page=1&size=3
+
+### product
+GET http://localhost:8080/api/products/1
+
+### product-category
+GET http://localhost:8080/api/product-category
+
+### countries
+GET http://localhost:8080/api/countries
+
