@@ -24,6 +24,7 @@ import {
 } from '@okta/okta-angular';
 import myAppConfig from './config/the-app-config';
 import { OktaAuth } from '@okta/okta-auth-js';
+import { MembersPageComponent } from './components/members-page/members-page.component';
 
 
 const oktaConfig = Object.assign({
@@ -67,7 +68,8 @@ const routes: Routes = [
     CartDetailsComponent,
     CheckoutComponent,
     LoginComponent,
-    LoginStatusComponent
+    LoginStatusComponent,
+    MembersPageComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
